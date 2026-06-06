@@ -1,0 +1,62 @@
+{
+  "deviceId": "RPI-01",
+  "deviceName": "Sistema de Control de Acceso Facial",
+  "deviceType": "IoT Gateway",
+  "manufacturer": "Proyecto Electiva IoT",
+  "protocol": "MQTT",
+  "ipAddress": "192.168.1.100",
+
+  "sensors": [
+    {
+      "id": "pir01",
+      "name": "Sensor de Movimiento",
+      "type": "PIR",
+      "gpio": 23
+    }
+  ],
+
+  "actuators": [
+    {
+      "id": "servo01",
+      "name": "Puerta",
+      "type": "Servo",
+      "gpio": 18
+    },
+    {
+      "id": "ledGreen",
+      "name": "LED Verde",
+      "type": "LED",
+      "gpio": 17
+    },
+    {
+      "id": "ledRed",
+      "name": "LED Rojo",
+      "type": "LED",
+      "gpio": 27
+    },
+    {
+      "id": "ledBlue",
+      "name": "LED Azul",
+      "type": "LED",
+      "gpio": 22
+    }
+  ],
+
+  "mqttTopics": [
+    "facialRecog/motion",
+    "facialRecog/access",
+    "facialRecog/door",
+    "facialRecog/status"
+  ],
+
+  "services": [
+    {
+      "name": "Device Information",
+      "endpoint": "/api/device-info"
+    },
+    {
+      "name": "Device Status",
+      "endpoint": "/api/status"
+    }
+  ]
+}
