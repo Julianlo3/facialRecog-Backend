@@ -1,0 +1,14 @@
+[
+  {
+    "event": "motion_detected",
+    "timestamp": "2026-06-09T20:30:00"
+  },
+  {
+    "event": "access_authorized",
+    "timestamp": "2026-06-09T20:30:03"
+  },
+  {
+    "event": "door_opened",
+    "timestamp": "2026-06-09T20:30:04"
+  }
+]
