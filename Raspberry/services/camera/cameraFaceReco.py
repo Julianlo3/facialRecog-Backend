@@ -1,13 +1,20 @@
 import cv2
+from gpiozero import LED
 from fastapi import FastAPI
 from fastapi.responses import StreamingResponse
 
 app = FastAPI()
 
-# Cámara USB
+# LEDs
+verde = LED(17)
+rojo = LED(27)
+azul = LED(22)
+
+
+# Cámara
 camera = cv2.VideoCapture(0, cv2.CAP_V4L2)
 
-# Detector Haar Cascade
+# Detector de rostros
 face_cascade = cv2.CascadeClassifier(
     cv2.data.haarcascades +
     "haarcascade_frontalface_default.xml"
@@ -23,13 +30,11 @@ def generate_frames():
         if not success:
             continue
 
-        # Escala de grises para OpenCV
         gray = cv2.cvtColor(
             frame,
             cv2.COLOR_BGR2GRAY
         )
 
-        # Detección de rostros
         faces = face_cascade.detectMultiScale(
             gray,
             scaleFactor=1.1,
@@ -37,7 +42,18 @@ def generate_frames():
             minSize=(50, 50)
         )
 
-        # Dibujar rectángulos
+        # Control LEDs
+        if len(faces) > 0:
+
+            verde.on()
+            rojo.off()
+
+        else:
+
+            verde.off()
+            rojo.on()
+
+        # Dibujar rostros
         for (x, y, w, h) in faces:
 
             cv2.rectangle(
@@ -58,7 +74,6 @@ def generate_frames():
                 2
             )
 
-        # Convertir a JPG
         _, buffer = cv2.imencode(
             ".jpg",
             frame
@@ -72,15 +87,6 @@ def generate_frames():
             + frame_bytes +
             b"\r\n"
         )
-
-
-@app.get("/")
-def root():
-
-    return {
-        "status": "online",
-        "service": "camera"
-    }
 
 
 @app.get("/video")
