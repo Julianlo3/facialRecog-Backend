@@ -1,9 +1,9 @@
 {
   "motionDetected": true,
   "doorState": "opened",
-  "greenLed": true,
-  "redLed": false,
-  "blueLed": true,
+  "greenLed": false,
+  "redLed": true,
+  "blueLed": false,
   "lastRecognition": "authorized",
-  "lastUpdate": "2026-06-09T20:30:00"
+  "lastUpdate": "2026-06-07T18:55:27"
 }

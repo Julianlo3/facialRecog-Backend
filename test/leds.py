@@ -1,32 +1,70 @@
-from gpiozero import LED, MotionSensor
+from gpiozero import LED
 from time import sleep
+import sys
+from pathlib import Path
 
-# LEDs
+ROOT = Path(__file__).resolve().parent.parent
+sys.path.append(str(ROOT))
+
+from Raspberry.services.mqtt.state import update_state
+from Raspberry.services.mqtt.mqtt_client import client
+
 verde = LED(17)
 rojo = LED(27)
 azul = LED(22)
 
-# PIR
-pir = MotionSensor(23)
-
-print("Esperando movimiento...")
-
 while True:
 
-    pir.wait_for_motion()
-
-    print("MOVIMIENTO DETECTADO")
-
     verde.on()
-    rojo.on()
-    azul.on()
 
-    pir.wait_for_no_motion()
+    update_state(
+        "greenLed",
+        True,
+        client
+    )
 
-    print("Sin movimiento")
+    sleep(10)
 
     verde.off()
+
+    update_state(
+        "greenLed",
+        False,
+        client
+    )
+
+    rojo.on()
+
+    update_state(
+        "redLed",
+        True,
+        client
+    )
+
+    sleep(10)
+
     rojo.off()
+
+    update_state(
+        "redLed",
+        False,
+        client
+    )
+
+    azul.on()
+
+    update_state(
+        "blueLed",
+        True,
+        client
+    )
+
+    sleep(10)
+
     azul.off()
 
-    sleep(0.5)
+    update_state(
+        "blueLed",
+        False,
+        client
+    )
