@@ -2,7 +2,7 @@ import json
 from pathlib import Path
 from datetime import datetime
 
-STATE_PATH = Path("./Raspberry/state.json")
+STATE_PATH = Path("./Raspberry/state/state.json")
 
 def update_state(key, value, mqtt_client=None):
 

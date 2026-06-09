@@ -1,0 +1,12 @@
+{
+  "motionDetected": false,
+  "faceDetected": false,
+  "recognizedPerson": null,
+  "accessGranted": false,
+  "doorState": "closed",
+  "greenLed": false,
+  "redLed": false,
+  "blueLed": false,
+  "cameraOnline": true,
+  "lastUpdate": "2026-06-08T20:00:00"
+}

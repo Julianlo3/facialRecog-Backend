@@ -1,5 +1,5 @@
 {
-  "deviceId": "RPI-01",
+  "deviceId": "FR-01",
   "deviceName": "Sistema de Control de Acceso Facial",
   "deviceType": "IoT Gateway",
   "manufacturer": "Proyecto Electiva IoT",
@@ -12,6 +12,11 @@
       "name": "Sensor de Movimiento",
       "type": "PIR",
       "gpio": 23
+    },
+    {
+      "id": "cam-01",
+      "name": "Logitech C615",
+      "type": "camera"
     }
   ],
 
@@ -23,20 +28,20 @@
       "gpio": 18
     },
     {
-      "id": "ledGreen",
-      "name": "LED Verde",
+      "id": "ledBlue",
+      "name": "LED Azul",
       "type": "LED",
       "gpio": 17
     },
     {
-      "id": "ledRed",
-      "name": "LED Rojo",
+      "id": "ledAmarillo",
+      "name": "LED amarillo",
       "type": "LED",
       "gpio": 27
     },
     {
-      "id": "ledBlue",
-      "name": "LED Azul",
+      "id": "ledRojo",
+      "name": "LED Rojo",
       "type": "LED",
       "gpio": 22
     }
