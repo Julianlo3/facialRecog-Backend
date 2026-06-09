@@ -3,10 +3,25 @@ from pathlib import Path
 from datetime import datetime
 
 EVENTS_PATH = Path(
-    "Raspberry/state/events.json"
+    "state/logs.json"
 )
 
-def add_event(event, data=None):
+
+def add_event(
+    device,
+    message,
+    mqtt_client=None
+):
+
+    timestamp = datetime.now().isoformat(
+        timespec="seconds"
+    )
+
+    new_event = {
+        "timestamp": timestamp,
+        "device": device,
+        "message": message
+    }
 
     with open(
         EVENTS_PATH,
@@ -15,17 +30,6 @@ def add_event(event, data=None):
     ) as file:
 
         events = json.load(file)
-
-    new_event = {
-        "timestamp":
-        datetime.now().isoformat(
-            timespec="seconds"
-        ),
-        "event": event
-    }
-
-    if data:
-        new_event.update(data)
 
     events.append(new_event)
 
@@ -42,4 +46,14 @@ def add_event(event, data=None):
             file,
             indent=2,
             ensure_ascii=False
+        )
+
+    if mqtt_client:
+
+        mqtt_client.publish(
+            "facialRecog/events",
+            json.dumps(
+                new_event,
+                ensure_ascii=False
+            )
         )

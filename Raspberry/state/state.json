@@ -4,9 +4,10 @@
   "recognizedPerson": null,
   "accessGranted": false,
   "doorState": "closed",
-  "greenLed": false,
+  "greenLed": true,
   "redLed": false,
   "blueLed": false,
   "cameraOnline": true,
-  "lastUpdate": "2026-06-08T20:00:00"
+  "lastUpdate": "2026-06-09T18:15:31",
+  "yellowLed": true
 }

@@ -6,29 +6,47 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.append(str(ROOT))
 
-from Raspberry.services.mqtt.state import update_state
+from Raspberry.utils.state_manager import update_state
 from Raspberry.services.mqtt.mqtt_client import client
 
-verde = LED(17)
-rojo = LED(27)
-azul = LED(22)
+azul = LED(17)
+amarillo = LED(27)
+rojo = LED(22)
 
 while True:
 
-    verde.on()
+    azul.on()
 
     update_state(
-        "greenLed",
+        "blueLed",
         True,
         client
     )
 
     sleep(10)
 
-    verde.off()
+    azul.off()
 
     update_state(
-        "greenLed",
+        "blueLed",
+        False,
+        client
+    )
+
+    amarillo.on()
+
+    update_state(
+        "yellowLed",
+        True,
+        client
+    )
+
+    sleep(10)
+
+    amarillo.off()
+
+    update_state(
+        "yellowLed",
         False,
         client
     )
@@ -47,24 +65,6 @@ while True:
 
     update_state(
         "redLed",
-        False,
-        client
-    )
-
-    azul.on()
-
-    update_state(
-        "blueLed",
-        True,
-        client
-    )
-
-    sleep(10)
-
-    azul.off()
-
-    update_state(
-        "blueLed",
         False,
         client
     )

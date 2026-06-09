@@ -1,14 +1,502 @@
 [
   {
-    "event": "motion_detected",
-    "timestamp": "2026-06-09T20:30:00"
+    "timestamp": "2026-06-09T17:58:00",
+    "device": "Sensor PIR",
+    "message": "Movimiento detectado"
   },
   {
-    "event": "access_authorized",
-    "timestamp": "2026-06-09T20:30:03"
+    "timestamp": "2026-06-09T17:58:00",
+    "device": "LED Azul",
+    "message": "Indicador de captura activado"
   },
   {
-    "event": "door_opened",
-    "timestamp": "2026-06-09T20:30:04"
+    "timestamp": "2026-06-09T17:58:02",
+    "device": "Cámara",
+    "message": "Captura de imagen realizada"
+  },
+  {
+    "timestamp": "2026-06-09T17:58:02",
+    "device": "OpenCV",
+    "message": "No se detectó ningún rostro"
+  },
+  {
+    "timestamp": "2026-06-09T17:58:02",
+    "device": "LED Azul",
+    "message": "Indicador de captura desactivado"
+  },
+  {
+    "timestamp": "2026-06-09T17:58:04",
+    "device": "Sensor PIR",
+    "message": "Movimiento detectado"
+  },
+  {
+    "timestamp": "2026-06-09T17:58:04",
+    "device": "LED Azul",
+    "message": "Indicador de captura activado"
+  },
+  {
+    "timestamp": "2026-06-09T17:58:05",
+    "device": "Cámara",
+    "message": "Captura de imagen realizada"
+  },
+  {
+    "timestamp": "2026-06-09T17:58:05",
+    "device": "OpenCV",
+    "message": "No se detectó ningún rostro"
+  },
+  {
+    "timestamp": "2026-06-09T17:58:05",
+    "device": "LED Azul",
+    "message": "Indicador de captura desactivado"
+  },
+  {
+    "timestamp": "2026-06-09T18:00:10",
+    "device": "Sensor PIR",
+    "message": "Movimiento detectado"
+  },
+  {
+    "timestamp": "2026-06-09T18:00:10",
+    "device": "LED Azul",
+    "message": "Indicador de captura activado"
+  },
+  {
+    "timestamp": "2026-06-09T18:00:12",
+    "device": "Cámara",
+    "message": "Captura de imagen realizada"
+  },
+  {
+    "timestamp": "2026-06-09T18:00:12",
+    "device": "OpenCV",
+    "message": "No se detectó ningún rostro"
+  },
+  {
+    "timestamp": "2026-06-09T18:00:12",
+    "device": "LED Azul",
+    "message": "Indicador de captura desactivado"
+  },
+  {
+    "timestamp": "2026-06-09T18:00:14",
+    "device": "Sensor PIR",
+    "message": "Movimiento detectado"
+  },
+  {
+    "timestamp": "2026-06-09T18:00:14",
+    "device": "LED Azul",
+    "message": "Indicador de captura activado"
+  },
+  {
+    "timestamp": "2026-06-09T18:00:15",
+    "device": "Cámara",
+    "message": "Captura de imagen realizada"
+  },
+  {
+    "timestamp": "2026-06-09T18:00:15",
+    "device": "OpenCV",
+    "message": "No se detectó ningún rostro"
+  },
+  {
+    "timestamp": "2026-06-09T18:00:15",
+    "device": "LED Azul",
+    "message": "Indicador de captura desactivado"
+  },
+  {
+    "timestamp": "2026-06-09T18:00:18",
+    "device": "Sensor PIR",
+    "message": "Movimiento detectado"
+  },
+  {
+    "timestamp": "2026-06-09T18:00:18",
+    "device": "LED Azul",
+    "message": "Indicador de captura activado"
+  },
+  {
+    "timestamp": "2026-06-09T18:00:19",
+    "device": "Cámara",
+    "message": "Captura de imagen realizada"
+  },
+  {
+    "timestamp": "2026-06-09T18:00:19",
+    "device": "OpenCV",
+    "message": "No se detectó ningún rostro"
+  },
+  {
+    "timestamp": "2026-06-09T18:00:19",
+    "device": "LED Azul",
+    "message": "Indicador de captura desactivado"
+  },
+  {
+    "timestamp": "2026-06-09T18:03:48",
+    "device": "Sensor PIR",
+    "message": "Movimiento detectado"
+  },
+  {
+    "timestamp": "2026-06-09T18:03:48",
+    "device": "LED Azul",
+    "message": "Indicador de captura activado"
+  },
+  {
+    "timestamp": "2026-06-09T18:03:50",
+    "device": "Cámara",
+    "message": "Captura de imagen realizada"
+  },
+  {
+    "timestamp": "2026-06-09T18:03:50",
+    "device": "OpenCV",
+    "message": "No se detectó ningún rostro"
+  },
+  {
+    "timestamp": "2026-06-09T18:03:50",
+    "device": "LED Azul",
+    "message": "Indicador de captura desactivado"
+  },
+  {
+    "timestamp": "2026-06-09T18:03:52",
+    "device": "Sensor PIR",
+    "message": "Movimiento detectado"
+  },
+  {
+    "timestamp": "2026-06-09T18:03:52",
+    "device": "LED Azul",
+    "message": "Indicador de captura activado"
+  },
+  {
+    "timestamp": "2026-06-09T18:03:53",
+    "device": "Cámara",
+    "message": "Captura de imagen realizada"
+  },
+  {
+    "timestamp": "2026-06-09T18:03:53",
+    "device": "OpenCV",
+    "message": "No se detectó ningún rostro"
+  },
+  {
+    "timestamp": "2026-06-09T18:03:53",
+    "device": "LED Azul",
+    "message": "Indicador de captura desactivado"
+  },
+  {
+    "timestamp": "2026-06-09T18:08:17",
+    "device": "Sensor PIR",
+    "message": "Movimiento detectado"
+  },
+  {
+    "timestamp": "2026-06-09T18:08:17",
+    "device": "LED Azul",
+    "message": "Indicador de captura activado"
+  },
+  {
+    "timestamp": "2026-06-09T18:08:18",
+    "device": "Cámara",
+    "message": "Captura de imagen realizada"
+  },
+  {
+    "timestamp": "2026-06-09T18:08:18",
+    "device": "OpenCV",
+    "message": "No se detectó ningún rostro"
+  },
+  {
+    "timestamp": "2026-06-09T18:08:18",
+    "device": "LED Azul",
+    "message": "Indicador de captura desactivado"
+  },
+  {
+    "timestamp": "2026-06-09T18:08:27",
+    "device": "Sensor PIR",
+    "message": "Movimiento detectado"
+  },
+  {
+    "timestamp": "2026-06-09T18:08:27",
+    "device": "LED Azul",
+    "message": "Indicador de captura activado"
+  },
+  {
+    "timestamp": "2026-06-09T18:08:28",
+    "device": "Cámara",
+    "message": "Captura de imagen realizada"
+  },
+  {
+    "timestamp": "2026-06-09T18:08:28",
+    "device": "OpenCV",
+    "message": "No se detectó ningún rostro"
+  },
+  {
+    "timestamp": "2026-06-09T18:08:28",
+    "device": "LED Azul",
+    "message": "Indicador de captura desactivado"
+  },
+  {
+    "timestamp": "2026-06-09T18:08:59",
+    "device": "Sensor PIR",
+    "message": "Movimiento detectado"
+  },
+  {
+    "timestamp": "2026-06-09T18:08:59",
+    "device": "LED Azul",
+    "message": "Indicador de captura activado"
+  },
+  {
+    "timestamp": "2026-06-09T18:09:00",
+    "device": "Cámara",
+    "message": "Captura de imagen realizada"
+  },
+  {
+    "timestamp": "2026-06-09T18:09:00",
+    "device": "OpenCV",
+    "message": "No se detectó ningún rostro"
+  },
+  {
+    "timestamp": "2026-06-09T18:09:00",
+    "device": "LED Azul",
+    "message": "Indicador de captura desactivado"
+  },
+  {
+    "timestamp": "2026-06-09T18:09:17",
+    "device": "Sensor PIR",
+    "message": "Movimiento detectado"
+  },
+  {
+    "timestamp": "2026-06-09T18:09:17",
+    "device": "LED Azul",
+    "message": "Indicador de captura activado"
+  },
+  {
+    "timestamp": "2026-06-09T18:09:19",
+    "device": "Cámara",
+    "message": "Captura de imagen realizada"
+  },
+  {
+    "timestamp": "2026-06-09T18:09:19",
+    "device": "OpenCV",
+    "message": "No se detectó ningún rostro"
+  },
+  {
+    "timestamp": "2026-06-09T18:09:19",
+    "device": "LED Azul",
+    "message": "Indicador de captura desactivado"
+  },
+  {
+    "timestamp": "2026-06-09T18:12:04",
+    "device": "Sensor PIR",
+    "message": "Movimiento detectado"
+  },
+  {
+    "timestamp": "2026-06-09T18:12:04",
+    "device": "LED Azul",
+    "message": "Indicador de captura activado"
+  },
+  {
+    "timestamp": "2026-06-09T18:12:06",
+    "device": "Cámara",
+    "message": "Captura de imagen realizada"
+  },
+  {
+    "timestamp": "2026-06-09T18:12:06",
+    "device": "OpenCV",
+    "message": "No se detectó ningún rostro"
+  },
+  {
+    "timestamp": "2026-06-09T18:12:06",
+    "device": "LED Azul",
+    "message": "Indicador de captura desactivado"
+  },
+  {
+    "timestamp": "2026-06-09T18:12:25",
+    "device": "Sensor PIR",
+    "message": "Movimiento detectado"
+  },
+  {
+    "timestamp": "2026-06-09T18:12:25",
+    "device": "LED Azul",
+    "message": "Indicador de captura activado"
+  },
+  {
+    "timestamp": "2026-06-09T18:12:26",
+    "device": "Cámara",
+    "message": "Captura de imagen realizada"
+  },
+  {
+    "timestamp": "2026-06-09T18:12:26",
+    "device": "OpenCV",
+    "message": "No se detectó ningún rostro"
+  },
+  {
+    "timestamp": "2026-06-09T18:12:26",
+    "device": "LED Azul",
+    "message": "Indicador de captura desactivado"
+  },
+  {
+    "timestamp": "2026-06-09T18:13:14",
+    "device": "Sensor PIR",
+    "message": "Movimiento detectado"
+  },
+  {
+    "timestamp": "2026-06-09T18:13:14",
+    "device": "LED Azul",
+    "message": "Indicador de captura activado"
+  },
+  {
+    "timestamp": "2026-06-09T18:13:24",
+    "device": "Cámara",
+    "message": "Captura de imagen realizada"
+  },
+  {
+    "timestamp": "2026-06-09T18:13:24",
+    "device": "OpenCV",
+    "message": "No se detectó ningún rostro"
+  },
+  {
+    "timestamp": "2026-06-09T18:13:24",
+    "device": "LED Azul",
+    "message": "Indicador de captura desactivado"
+  },
+  {
+    "timestamp": "2026-06-09T18:13:29",
+    "device": "Sensor PIR",
+    "message": "Movimiento detectado"
+  },
+  {
+    "timestamp": "2026-06-09T18:13:29",
+    "device": "LED Azul",
+    "message": "Indicador de captura activado"
+  },
+  {
+    "timestamp": "2026-06-09T18:13:40",
+    "device": "Cámara",
+    "message": "Captura de imagen realizada"
+  },
+  {
+    "timestamp": "2026-06-09T18:13:40",
+    "device": "OpenCV",
+    "message": "No se detectó ningún rostro"
+  },
+  {
+    "timestamp": "2026-06-09T18:13:40",
+    "device": "LED Azul",
+    "message": "Indicador de captura desactivado"
+  },
+  {
+    "timestamp": "2026-06-09T18:13:52",
+    "device": "Sensor PIR",
+    "message": "Movimiento detectado"
+  },
+  {
+    "timestamp": "2026-06-09T18:13:52",
+    "device": "LED Azul",
+    "message": "Indicador de captura activado"
+  },
+  {
+    "timestamp": "2026-06-09T18:14:02",
+    "device": "Cámara",
+    "message": "Captura de imagen realizada"
+  },
+  {
+    "timestamp": "2026-06-09T18:14:02",
+    "device": "OpenCV",
+    "message": "No se detectó ningún rostro"
+  },
+  {
+    "timestamp": "2026-06-09T18:14:02",
+    "device": "LED Azul",
+    "message": "Indicador de captura desactivado"
+  },
+  {
+    "timestamp": "2026-06-09T18:14:04",
+    "device": "Sensor PIR",
+    "message": "Movimiento detectado"
+  },
+  {
+    "timestamp": "2026-06-09T18:14:04",
+    "device": "LED Azul",
+    "message": "Indicador de captura activado"
+  },
+  {
+    "timestamp": "2026-06-09T18:14:15",
+    "device": "Cámara",
+    "message": "Captura de imagen realizada"
+  },
+  {
+    "timestamp": "2026-06-09T18:14:15",
+    "device": "OpenCV",
+    "message": "No se detectó ningún rostro"
+  },
+  {
+    "timestamp": "2026-06-09T18:14:15",
+    "device": "LED Azul",
+    "message": "Indicador de captura desactivado"
+  },
+  {
+    "timestamp": "2026-06-09T18:14:50",
+    "device": "Sensor PIR",
+    "message": "Movimiento detectado"
+  },
+  {
+    "timestamp": "2026-06-09T18:14:50",
+    "device": "LED Azul",
+    "message": "Indicador de captura activado"
+  },
+  {
+    "timestamp": "2026-06-09T18:15:01",
+    "device": "Cámara",
+    "message": "Captura de imagen realizada"
+  },
+  {
+    "timestamp": "2026-06-09T18:15:01",
+    "device": "OpenCV",
+    "message": "No se detectó ningún rostro"
+  },
+  {
+    "timestamp": "2026-06-09T18:15:01",
+    "device": "LED Azul",
+    "message": "Indicador de captura desactivado"
+  },
+  {
+    "timestamp": "2026-06-09T18:15:08",
+    "device": "Sensor PIR",
+    "message": "Movimiento detectado"
+  },
+  {
+    "timestamp": "2026-06-09T18:15:08",
+    "device": "LED Azul",
+    "message": "Indicador de captura activado"
+  },
+  {
+    "timestamp": "2026-06-09T18:15:19",
+    "device": "Cámara",
+    "message": "Captura de imagen realizada"
+  },
+  {
+    "timestamp": "2026-06-09T18:15:19",
+    "device": "OpenCV",
+    "message": "No se detectó ningún rostro"
+  },
+  {
+    "timestamp": "2026-06-09T18:15:19",
+    "device": "LED Azul",
+    "message": "Indicador de captura desactivado"
+  },
+  {
+    "timestamp": "2026-06-09T18:15:21",
+    "device": "Sensor PIR",
+    "message": "Movimiento detectado"
+  },
+  {
+    "timestamp": "2026-06-09T18:15:21",
+    "device": "LED Azul",
+    "message": "Indicador de captura activado"
+  },
+  {
+    "timestamp": "2026-06-09T18:15:31",
+    "device": "Cámara",
+    "message": "Captura de imagen realizada"
+  },
+  {
+    "timestamp": "2026-06-09T18:15:31",
+    "device": "OpenCV",
+    "message": "No se detectó ningún rostro"
+  },
+  {
+    "timestamp": "2026-06-09T18:15:31",
+    "device": "LED Azul",
+    "message": "Indicador de captura desactivado"
   }
 ]

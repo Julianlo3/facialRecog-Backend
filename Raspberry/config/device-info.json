@@ -11,12 +11,14 @@
       "id": "pir01",
       "name": "Sensor de Movimiento",
       "type": "PIR",
-      "gpio": 23
+      "gpio": 23,
+      "status": "offline"
     },
     {
-      "id": "cam-01",
+      "id": "cam01",
       "name": "Logitech C615",
-      "type": "camera"
+      "type": "camera",
+      "status": "offline"
     }
   ],
 
@@ -25,25 +27,29 @@
       "id": "servo01",
       "name": "Puerta",
       "type": "Servo",
-      "gpio": 18
+      "gpio": 18,
+      "status": "offline"
     },
     {
       "id": "ledBlue",
       "name": "LED Azul",
       "type": "LED",
-      "gpio": 17
+      "gpio": 17,
+      "status": "offline"
     },
     {
       "id": "ledAmarillo",
       "name": "LED amarillo",
       "type": "LED",
-      "gpio": 27
+      "gpio": 27,
+      "status": "offline"
     },
     {
       "id": "ledRojo",
       "name": "LED Rojo",
       "type": "LED",
-      "gpio": 22
+      "gpio": 22,
+      "status": "offline"
     }
   ],
 

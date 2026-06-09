@@ -5,8 +5,8 @@ from urllib.parse import urlparse
 
 
 RASPBERRY_DIR = Path(__file__).resolve().parents[2]
-DEVICE_INFO_PATH = RASPBERRY_DIR / "device-info.json"
-STATE_PATH = RASPBERRY_DIR / "state.json"
+DEVICE_INFO_PATH = RASPBERRY_DIR / "config/device-info.json"
+STATE_PATH = RASPBERRY_DIR / "state/state.json"
 
 
 def read_json(path):
@@ -37,36 +37,6 @@ def build_devices():
             "currentValue": "Gateway activo",
             "detail": "Controla sensores, actuadores y servicios del pipeline facial.",
         },
-        {
-            "id": "camera01",
-            "name": "Cámara de acceso",
-            "type": "camera",
-            "status": status,
-            "location": "Entrada principal",
-            "lastSeen": last_update,
-            "currentValue": "Lista para captura",
-            "detail": "Fuente de video usada después de la detección PIR.",
-        },
-        {
-            "id": "yolo01",
-            "name": "Detector de personas",
-            "type": "yolo",
-            "status": status,
-            "location": "Raspberry Pi 5",
-            "lastSeen": last_update,
-            "currentValue": "Pendiente de inferencia",
-            "detail": "Valida si el movimiento corresponde a una persona.",
-        },
-        {
-            "id": "face-db",
-            "name": "Base de rostros autorizados",
-            "type": "database",
-            "status": status,
-            "location": "Backend Python",
-            "lastSeen": last_update,
-            "currentValue": state.get("lastRecognition", "Sin reconocimiento"),
-            "detail": "Consulta si la persona detectada existe en la base de datos.",
-        },
     ]
 
     for sensor in device_info.get("sensors", []):
@@ -88,6 +58,7 @@ def build_devices():
     state_keys = {
         "servo01": "doorState",
         "ledGreen": "greenLed",
+        "cam01": "cam01",
         "ledRed": "redLed",
         "ledBlue": "blueLed",
     }

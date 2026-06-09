@@ -1,14 +1,13 @@
 import paho.mqtt.client as mqtt
 
-BROKER = "localhost"
-PORT = 1883
+def connect_mqtt():
 
-client = mqtt.Client(
-    mqtt.CallbackAPIVersion.VERSION2
-)
+    client = mqtt.Client()
 
-client.connect(BROKER, PORT)
+    client.connect(
+        "localhost",
+        1883,
+        60
+    )
 
-client.loop_start()
-
-print("MQTT conectado")
+    return client
