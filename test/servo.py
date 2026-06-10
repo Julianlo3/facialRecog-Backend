@@ -11,8 +11,8 @@ servo = AngularServo(
 
 while True:
 
-    print("120°")
-    servo.angle = 90
+    print("130°")
+    servo.angle = 130
     sleep(5)
 
     servo.detach()

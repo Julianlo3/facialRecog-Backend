@@ -1,13 +1,13 @@
 {
+  "blueLed": false,
+  "yellowLed": false,
+  "redLed": false,
   "motionDetected": false,
   "faceDetected": false,
-  "recognizedPerson": null,
+  "lastRecognition": "",
   "accessGranted": false,
   "doorState": "closed",
-  "greenLed": true,
-  "redLed": false,
-  "blueLed": false,
   "cameraOnline": true,
-  "lastUpdate": "2026-06-09T18:15:31",
-  "yellowLed": true
+  "lastUpdate": "2026-06-10T06:52:34",
+  "door": "closed"
 }

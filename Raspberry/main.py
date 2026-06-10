@@ -1,23 +1,24 @@
 import time
-import sys
+import cv2
+import numpy as np
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parent.parent
-sys.path.append(str(ROOT))
 
-from sensor.pir_sensor import motion_detected
-
-from actuator.leds import (
-    blue_on,
-    blue_off
+from sensor.camera_service import (
+    start_camera,
+    capture_frames_for_recognition
 )
 
-from sensor.camera import (
-    capture_frame
+from sensor.pir_sensor import (
+    motion_detected
 )
+
+from actuator.servo import *
+
+from actuator.leds import *
 
 from logic.face_detector import (
-    detect_face
+    find_face_frame
 )
 
 from logic.face_recognition import (
@@ -36,23 +37,28 @@ from utils.state_manager import (
     update_state
 )
 
+start_camera()
 
 mqtt_client = connect_mqtt()
 
-last_detection=0
+last_detection = 0
+
 COOLDOWN = 10
 
-print("Sistema iniciado...")
+print("Sistema facialRecog iniciado")
 
 while True:
 
     current_time = time.time()
 
-    if (motion_detected() and current_time - last_detection >= COOLDOWN):
-
+    if (
+        motion_detected()
+        and current_time - last_detection >= COOLDOWN
+    ):
+        
+        print("Moviemito detectado")
 
         last_detection = current_time
-        print("Movimiento detectado")
 
         add_event(
             "Sensor PIR",
@@ -66,118 +72,98 @@ while True:
             mqtt_client
         )
 
-        blue_on()
-
-        add_event(
-            "LED Azul",
-            "Indicador de captura activado",
-            mqtt_client
-        )
+        yellow_on()
 
         update_state(
-            "blueLed",
+            "yellowLed",
             True,
             mqtt_client
         )
 
-        time.sleep(10)
+        time.sleep(2)
 
-        frame = capture_frame()
+        frames = (
+            capture_frames_for_recognition(
+                duration=2,
+                fps=5
+            )
+        )
 
+        frame = find_face_frame(
+            frames
+        )
+     
         if frame is not None:
 
+            CAPTURE_PATH = (
+            "../bdFacialRecog/facilRecog/media/captures/last_capture.jpg"
+            )
+
+            print(Path(CAPTURE_PATH).resolve())
+
+            cv2.imwrite(
+                CAPTURE_PATH,
+                frame
+            )
+
+            print("foto guardada")
+
+            mqtt_client.publish(
+                "/facialRecog/capture",
+                "new_capture"
+            )
+
             add_event(
-                "Cámara",
-                "Captura de imagen realizada",
+                "OpenCV",
+                "Rostro detectado",
                 mqtt_client
             )
 
-            face_found = detect_face(frame)
+            result = recognize_face(frame)
 
-            if face_found:
+            print(result)
 
-                print("Rostro detectado")
+          
 
+            if(result['recognized']):
                 add_event(
-                    "OpenCV",
-                    "Rostro detectado",
-                    mqtt_client
-                )
+                "Reconocimiento Facial",
+                f"Usuario reconocido: {result['persona']}",
+                mqtt_client)
 
-                update_state(
-                    "faceDetected",
-                    True,
-                    mqtt_client
-                )
-
-                result = recognize_face(frame)
-
-                print(result)
-
-                if result and result.get("recognized"):
-
-                    add_event(
-                        "Reconocimiento Facial",
-                        f"Usuario reconocido: {result['name']}",
-                        mqtt_client
-                    )
-
-                    update_state(
-                        "lastRecognition",
-                        result["name"],
-                        mqtt_client
-                    )
-
-                else:
-
-                    add_event(
-                        "Reconocimiento Facial",
-                        "Usuario no reconocido",
-                        mqtt_client
-                    )
-
+                print("Persona encontrada")
+                yellow_off()
+                blue_on()
+                open_door()
             else:
+                print("Persona no encontrada")
+                yellow_off()
+                red_on()
 
-                add_event(
-                    "OpenCV",
-                    "No se detectó ningún rostro",
-                    mqtt_client
-                )
+            
 
         else:
 
             add_event(
-                "Cámara",
-                "Error al capturar imagen",
+                "OpenCV",
+                "No se encontró rostro",
                 mqtt_client
             )
 
-        blue_off()
+            update_state(
+                "motionDetected",
+                False,
+                mqtt_client
+            )
 
-        add_event(
-            "LED Azul",
-            "Indicador de captura desactivado",
-            mqtt_client
-        )
+        
+        time.sleep(10)
+        yellow_off()
 
         update_state(
-            "blueLed",
+            "yellowLed",
             False,
             mqtt_client
         )
-
-        update_state(
-            "motionDetected",
-            False,
-            mqtt_client
-        )
-
-        update_state(
-            "faceDetected",
-            False,
-            mqtt_client
-        )
-
-        time.sleep(2)
 
     time.sleep(0.1)
